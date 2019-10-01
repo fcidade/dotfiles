@@ -1,0 +1,68 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": ["airbnb"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "import/prefer-default-export": "off",
+    "import/no-named-as-default-member": "off",
+    "indent": ["error", 4, { "ignoredNodes": ["JSXElement"] }],
+    "no-tabs": 0,
+    "max-len": ["error", { "code": 160 }],
+    "no-use-before-define": ["off", { "functions": true, "classes": true }],
+    "no-useless-concat": "off",
+    "no-restricted-globals": "off",
+    "arrow-parens": "off",
+    "react/jsx-indent": ["error", 4],
+    "react/jsx-indent-props": ["error", 4],
+    "react-hooks/exhaustive-deps": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "import/no-unresolved": "off",
+    "jsx-a11y/anchor-is-valid": [ "error", {
+        "components": [  ],
+        "specialLink": [  ],
+        "aspects": [ "noHref", "invalidHref", "preferButton" ]
+    }],
+    "react-hooks/exhaustive-deps": "off"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.test.js", "**/*.test.jsx"],
+      "env": {
+        "jest": true
+      }
+    }
+  ],
+  "settings": {
+    "import/resolver": {
+      "alias": [
+          ["components", "./src/components"],
+          ["pages", "./src/pages"],
+          ["services", "./src/services"],
+          ["utils", "./src/utils"],
+          ["assets", "./src/assets"],
+          ["layouts", "./src/layouts"],
+          ["store", "./src/store"],
+          ["styles", "./src/styles"],
+          ["theme", "./src/theme"]
+        ]
+    }
+  }
+}
