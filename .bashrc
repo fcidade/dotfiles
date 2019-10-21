@@ -6,6 +6,9 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 # ~/.bashrc
 #
 
+# git
+alias grho='git reset --hard origin'
+
 # Just for fun
 alias please=sudo
 
@@ -204,3 +207,16 @@ if [ "$TERM" = "linux" ]; then
 fi
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/tools:/opt/android-sdk/tools/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/franckcid/Android/Sdk/tools:/home/franckcid/Android/Sdk/platform-tools:/home/franckcid/.vimpkg/bin"
+
+# Disable git add . and git stage .
+git() {
+    if [ "$1" = "add" -o "$1" = "stage" ]; then
+        if [ "$2" = "." ]; then
+            printf "'git %s .' is currently disabled by your Git wrapper.\n" "$1";
+        else
+            command git "$@";
+        fi
+    else
+        command git "$@";
+    fi;
+}
