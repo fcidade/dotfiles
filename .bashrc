@@ -8,6 +8,12 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # git
 alias grho='git reset --hard origin'
+        
+# TODO: Auto download
+# Git autocomplete
+# https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+source ~/git-completion.bash
+
 
 # Just for fun
 alias please=sudo
