@@ -1,4 +1,6 @@
 syntax on
+" set noswapfile
+set showcmd
 set nu
 filetype plugin on
 set mouse=a
@@ -8,24 +10,27 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set clipboard=unnamed
-set nu
 set wrap
 set linebreak
 noremap <c-z> <nop>
 
-" Aside directory tree 
-"let g:netrw_banner = 0
-"let g:netrw_liststyle = 3
-"let g:netrw_browse_split = 4
-"let g:netrw_altv = 1
-"let g:netrw_winsize = 13
-"augroup ProjectDrawer
-"  autocmd!
-"  autocmd VimEnter * :Vexplore
-"augroup END
+" Swap files
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
 
-" Relative numbers
-" set relativenumber
+" Tab facilities
+" Easily create a new tab.
+" TODO: Better mapping
+noremap <Leader>tN :tabnew<CR>
+" Easily close a tab.
+noremap <Leader>tc :tabclose<CR>
+" Easily move a tab.
+noremap <Leader>tm :tabmove<CR>
+" Easily go to next tab.
+noremap <Leader>tn :tabnext<CR>
+" Easily go to previous tab.
+noremap <Leader>tp :tabprevious<CR>
 
 " Highlight search
 set hlsearch
@@ -41,7 +46,7 @@ nnoremap E $
 
 " Map esc to jk and disable <esc>
 inoremap jk <esc> 
-inoremap <esc> <nop>
+"inoremap <esc> <nop>
 set t_RV=
 
 set shiftround
@@ -55,6 +60,7 @@ set omnifunc=syntaxcomplete#Complete
 call plug#begin('~/.vim/plugged')
 
 Plug 'dracula/vim', {'as': 'dracula'}
+Plug 'fielding/vice', {'as': 'vice'}
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'chrisbra/Colorizer'
@@ -85,8 +91,11 @@ let g:ale_fix_on_save = 1
 " Lua
 autocmd filetype lua nnoremap <F4> :w <bar> exec '!lua  '.shellescape('%')<CR>
 autocmd filetype lua nnoremap <F5> :w <bar> exec '!love . '<CR>
+" Python
 autocmd filetype python nnoremap <F4> :w <bar> exec '!python3 '.shellescape('%')<CR>
+" JS
 autocmd filetype javascript nnoremap <F4> :w <bar> exec '!npm start '<CR>
+" C++
 autocmd filetype cpp nnoremap <F4> :w <bar> exec '!make all '<CR>
 
 " Intellisense
