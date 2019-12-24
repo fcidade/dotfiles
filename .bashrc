@@ -18,6 +18,9 @@ source ~/git-completion.bash
 # Just for fun
 alias please=sudo
 
+# Utils
+alias cls=clear
+
 # Shortcut for copy and paste
 alias c=xclip
 alias v='xclip -o'
