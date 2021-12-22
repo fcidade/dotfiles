@@ -1,0 +1,21 @@
+[url "git@stash.newfold.com:"]
+	insteadOf = https://stash.newfold.com/scm/
+[user]
+	email = franciscocidadehomemjunior@gmail.com
+	name = Francisco Cidade
+
+[core]
+	editor = vim
+
+[alias]
+	c = !git commit -m
+	s = !git status -s
+	a = !git add 
+	l = !git log --pretty=format:'%C(blue)%h%d %C(white)%s  - %C(red)%cn, %cr'
+	pl = !git pull
+	ps = !git push
+	mm = !git merge master
+	r = !git rebase 
+	ri = !git rebase -i 
+	t = !git tag
+
