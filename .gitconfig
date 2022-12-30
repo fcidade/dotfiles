@@ -1,21 +1,24 @@
-[url "git@stash.newfold.com:"]
-	insteadOf = https://stash.newfold.com/scm/
+# This is Git's per-user configuration file.
 [user]
-	email = franciscocidadehomemjunior@gmail.com
-	name = Francisco Cidade
+        name = Francisco Cidade
+        email = franciscocidadehomemjunior@gmail.com
 
 [core]
-	editor = vim
+        editor = vim
 
 [alias]
-	c = !git commit -m
-	s = !git status -s
-	a = !git add 
-	l = !git log --pretty=format:'%C(blue)%h%d %C(white)%s  - %C(red)%cn, %cr'
-	pl = !git pull
-	ps = !git push
-	mm = !git merge master
-	r = !git rebase 
-	ri = !git rebase -i 
-	t = !git tag
+        c = !git commit -m
+        ch = !git checkout
+        nb = !git checkout -b
+        ca = !git commit --amend --edit
+        s = !git status -s
+        l = !git log --pretty=format:'%C(blue)%h%d %C(white)%s  - %C(red)%cn, %cr'
+        a = !git add
+        pl = !git pull
+        ps = !git push
+        r = !git rebase
+        ri = !git rebase -i
+        t = !git tag
 
+[init]
+        defaultBranch = master
