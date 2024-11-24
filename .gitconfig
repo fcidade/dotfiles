@@ -21,4 +21,4 @@
         t = !git tag
 
 [init]
-        defaultBranch = master
+        defaultBranch = main
